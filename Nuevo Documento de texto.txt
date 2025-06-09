@@ -1,0 +1,9 @@
+Se debe construir una aplicación en javafx con persistencia de datos (hibernate).
+
+La temática será de videojuegos:
+
+    Se deberá crear un logueo con dos usuarios: Usuario y admin
+    El usuario, una vez logueado, podrá ver los diferentes catálogos de juegos agrupado por temáticas: deportes, aventura...
+    El administrador será encargado de, o crear nuevos catálogos de juegos o de borrar si el juego se ha descatalogado.
+    El aplicativo deberá tener elementos multimedia como fotos o video (trailers de juegos)
+    El usuario podrá adquirir juegos que se almacenarán en la base de datos
