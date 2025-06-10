@@ -10,10 +10,9 @@ module com.example.echevarria_castillo_jose_ignacio_videojuegos {
     requires java.naming;
 
     opens com.example.echevarria_castillo_jose_ignacio_videojuegos to javafx.fxml;
-    //exports com.example.echevarria_castillo_jose_ignacio_videojuegos;
     exports com.example.echevarria_castillo_jose_ignacio_videojuegos.app;
     opens com.example.echevarria_castillo_jose_ignacio_videojuegos.app to javafx.fxml;
     exports com.example.echevarria_castillo_jose_ignacio_videojuegos.controller;
     opens com.example.echevarria_castillo_jose_ignacio_videojuegos.controller to javafx.fxml;
-
+    opens com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.entities to org.hibernate.orm.core;
 }
