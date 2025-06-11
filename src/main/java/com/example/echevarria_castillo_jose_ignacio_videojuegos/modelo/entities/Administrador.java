@@ -20,7 +20,7 @@ public class Administrador {
     @Column(name = "email", nullable = false)
     private String email;
 
-    //cinstructores
+    //constructores
     public Administrador() {
     }
 

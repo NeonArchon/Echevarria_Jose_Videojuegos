@@ -17,35 +17,52 @@ import java.io.IOException;
 public class HelloController {
 
     @FXML
-    private TextField usernameField;
+    private TextField usuarioField;
     @FXML
-    private PasswordField passwordField;
+    private PasswordField contrasenaField;
     @FXML
-    private Label messageLabel;
+    private Label mensajeLabel;
 
     private ClienteDAO clienteDAO = new ClienteDAO();
     private AdministradorDAO adminDAO = new AdministradorDAO();
 
     @FXML
     protected void onLoginClick() {
-        String username = usernameField.getText();
-        String password = passwordField.getText();
+        String username = usuarioField.getText();
+        String password = contrasenaField.getText();
 
         Cliente cliente = clienteDAO.loginCliente(username, password);
         if (cliente != null) {
-            messageLabel.setText("Bienvenido Cliente: " + cliente.getNombreusuario());
+            mensajeLabel.setText("Bienvenido Cliente: " + cliente.getNombreusuario());
             // Ir a vista de catálogo
             return;
         }
 
+
         Administrador admin = adminDAO.loginAdministrador(username, password);
         if (admin != null) {
-            messageLabel.setText("Bienvenido Administrador: " + admin.getNombreusuario());
-            // Ir a vista de gestión admin
+            mensajeLabel.setText("Bienvenido Administrador: " + admin.getNombreusuario());
+
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/echevarria_castillo_jose_ignacio_videojuegos/admin_view.fxml"));
+                Scene scene = new Scene(fxmlLoader.load());
+                Stage stage = new Stage();
+                stage.setTitle("Panel de Administrador");
+                stage.setScene(scene);
+                stage.show();
+
+                // Cerrar la ventana actual si lo deseas
+                Stage currentStage = (Stage) usuarioField.getScene().getWindow();
+                currentStage.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
             return;
+
         }
 
-        messageLabel.setText("Usuario o contraseña incorrectos.");
+        mensajeLabel.setText("Usuario o contraseña incorrectos.");
 
     }
 
@@ -58,7 +75,5 @@ public class HelloController {
         stage.setScene(scene);
         stage.show();
     }
-
-
 
 }
