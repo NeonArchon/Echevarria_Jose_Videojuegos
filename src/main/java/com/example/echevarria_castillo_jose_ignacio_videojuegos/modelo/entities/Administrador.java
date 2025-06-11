@@ -17,18 +17,27 @@ public class Administrador {
     @Column(name = "contrasena", nullable = false)
     private String contrasena;
 
+    @Column(name = "email", nullable = false)
+    private String email;
+
     //cinstructores
     public Administrador() {
     }
 
-    public Administrador(String nombreusuario, String contrasena) {
+    public Administrador(Long id, String nombreusuario, String contrasena, String email) {
+        this.id = id;
         this.nombreusuario = nombreusuario;
         this.contrasena = contrasena;
+        this.email = email;
     }
 
     // Getters y setters
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNombreusuario() {
@@ -47,5 +56,11 @@ public class Administrador {
         this.contrasena = contrasena;
     }
 
+    public String getEmail() {
+        return email;
+    }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

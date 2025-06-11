@@ -65,4 +65,15 @@ public class ClienteDAO implements IntClienteDAO {
         tx.commit();
         session.close();
     }
+
+    @Override
+    public Cliente loginCliente(String nombreusuario, String contrasena) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Query<Cliente> query = session.createQuery("FROM Cliente WHERE nombreusuario = :nombre AND contrasena = :clave", Cliente.class);
+        query.setParameter("nombre", nombreusuario);
+        query.setParameter("clave", contrasena);
+        Cliente cliente = query.uniqueResult();
+        session.close();
+        return cliente;
+    }
 }

@@ -10,7 +10,6 @@ import java.util.List;
 
 public class AdministradorDAO implements IntAdministradorDAO{
 
-
     @Override
     public void guardarAdministrador(Administrador administrador) {
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -65,6 +64,17 @@ public class AdministradorDAO implements IntAdministradorDAO{
         }
         tx.commit();
         session.close();
+    }
+
+    @Override
+    public Administrador loginAdministrador(String nombreusuario, String contrasena) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Query<Administrador> query = session.createQuery("FROM Administrador WHERE nombreusuario = :nombre AND contrasena = :clave", Administrador.class);
+        query.setParameter("nombre", nombreusuario);
+        query.setParameter("clave", contrasena);
+        Administrador admin = query.uniqueResult();
+        session.close();
+        return admin;
     }
 
 }

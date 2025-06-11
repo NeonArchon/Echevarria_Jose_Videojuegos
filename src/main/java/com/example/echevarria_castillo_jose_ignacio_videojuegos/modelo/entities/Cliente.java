@@ -21,6 +21,9 @@ public class Cliente{
     @Column(name = "contrasena", nullable = false)
     private String contrasena;
 
+    @Column(name = "email", nullable = false)
+    private String email;
+
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private List<Compra> compras = new ArrayList<>();
 
@@ -28,9 +31,12 @@ public class Cliente{
     public Cliente() {
     }
 
-    public Cliente(String nombreusuario, String contrasena) {
+    public Cliente(Long id, String nombreusuario, String contrasena, String email, List<Compra> compras) {
+        this.id = id;
         this.nombreusuario = nombreusuario;
         this.contrasena = contrasena;
+        this.email = email;
+        this.compras = compras;
     }
 
     // Getters y setters
@@ -61,4 +67,11 @@ public class Cliente{
     public void setCompras(List<Compra> compras) {
         this.compras = compras;
     }
+
+    public void setId(Long id) {this.id = id;}
+
+    public String getEmail() {return email;}
+
+    public void setEmail(String email) {this.email = email;}
+
 }
