@@ -10,7 +10,7 @@ import java.util.List;
 public class PruebasDAO {
 
     public static void main(String[] args) {
-
+/*
         Session session = HibernateUtil.getSessionFactory().openSession();
 
         CategoriaDAO categoriaDAO = new CategoriaDAO(session);
@@ -29,7 +29,6 @@ public class PruebasDAO {
         juego.setPrecio(59.99);
         juego.setCategoria(categoria);
         juego.setRutaImagen("ruta/img.jpg");
-        juego.setRutaTrailer("ruta/trailer.mp4");
         juegoDAO.guardarJuego(juego);
 
         // Crear cliente
@@ -58,6 +57,8 @@ public class PruebasDAO {
 
         session.close();
         HibernateUtil.getSessionFactory().close();
+        */
+
     }
 
     }

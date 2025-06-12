@@ -5,6 +5,7 @@ import com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.DAO.Clien
 import com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.entities.Administrador;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -13,6 +14,7 @@ import com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.entities.
 import com.example.echevarria_castillo_jose_ignacio_videojuegos.Util.HibernateUtil;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 public class HelloController {
 
@@ -44,22 +46,27 @@ public class HelloController {
             mensajeLabel.setText("Bienvenido Administrador: " + admin.getNombreusuario());
 
             try {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/echevarria_castillo_jose_ignacio_videojuegos/admin_view.fxml"));
-                Scene scene = new Scene(fxmlLoader.load());
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/com/example/echevarria_castillo_jose_ignacio_videojuegos/admin-view.fxml"));
+
+                Parent root = loader.load();
+
                 Stage stage = new Stage();
                 stage.setTitle("Panel de Administrador");
-                stage.setScene(scene);
+                stage.setScene(new Scene(root));
                 stage.show();
 
-                // Cerrar la ventana actual si lo deseas
+                // Cierra la ventana actual
                 Stage currentStage = (Stage) usuarioField.getScene().getWindow();
                 currentStage.close();
+
             } catch (IOException e) {
+                mensajeLabel.setText("Error al cargar la interfaz");
+                // Log más detallado
+                System.err.println("Error al cargar FXML: " + e.getMessage());
                 e.printStackTrace();
             }
-
             return;
-
         }
 
         mensajeLabel.setText("Usuario o contraseña incorrectos.");

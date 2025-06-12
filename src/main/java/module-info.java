@@ -8,6 +8,7 @@ module com.example.echevarria_castillo_jose_ignacio_videojuegos {
     requires jakarta.persistence;
     requires mysql.connector.j;
     requires java.naming;
+    requires java.desktop;
 
     opens com.example.echevarria_castillo_jose_ignacio_videojuegos to javafx.fxml;
     exports com.example.echevarria_castillo_jose_ignacio_videojuegos.app;
@@ -15,4 +16,5 @@ module com.example.echevarria_castillo_jose_ignacio_videojuegos {
     exports com.example.echevarria_castillo_jose_ignacio_videojuegos.controller;
     opens com.example.echevarria_castillo_jose_ignacio_videojuegos.controller to javafx.fxml;
     opens com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.entities to org.hibernate.orm.core;
+
 }

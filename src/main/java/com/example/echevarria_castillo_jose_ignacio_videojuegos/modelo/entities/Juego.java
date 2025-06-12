@@ -24,30 +24,25 @@ public class Juego {
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
-    @Column(name = "ruta_imagen")
-    private String rutaImagen;
 
-    @Column(name = "ruta_trailer")
-    private String rutaTrailer;
+        @Column(name = "ruta_imagen")
+        private String rutaImagen;
+
 
     //constructores
-
     public Juego() {
     }
 
-    public Juego(Long id, String titulo, String descripcion, double precio, Categoria categoria, String rutaImagen, String rutaTrailer) {
+    public Juego(Long id, String titulo, String descripcion, double precio, Categoria categoria, String rutaImagen) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.precio = precio;
         this.categoria = categoria;
         this.rutaImagen = rutaImagen;
-        this.rutaTrailer = rutaTrailer;
     }
 
     //getters y setters
-
-
     public Long getId() {
         return id;
     }
@@ -94,13 +89,5 @@ public class Juego {
 
     public void setRutaImagen(String rutaImagen) {
         this.rutaImagen = rutaImagen;
-    }
-
-    public String getRutaTrailer() {
-        return rutaTrailer;
-    }
-
-    public void setRutaTrailer(String rutaTrailer) {
-        this.rutaTrailer = rutaTrailer;
     }
 }

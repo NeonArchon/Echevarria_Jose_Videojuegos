@@ -7,8 +7,12 @@ import com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.entities.
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.awt.*;
 
 
 public class RegistroController {
