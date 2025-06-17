@@ -12,18 +12,16 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label
-    text="Inicio de Sesion" style="-fx-font-size: 20; -fx-font-weight: bold;"
-    ></Label>
-
+    <Label text="Inicio de Sesion" style="-fx-font-size: 20; -fx-font-weight: bold;"/>
     <Label text="Iniciar Sesión"/>
     <TextField fx:id="usuarioField" promptText="Usuario o Email"/>
     <PasswordField fx:id="contrasenaField" promptText="Contraseña"/>
 
-    <Button text="Entrar" onAction="#onLoginClick"/>
-
-     <Button text="Registrarse" onAction="#onRegistroClick"/>
-
+    <HBox spacing="10.0" alignment="CENTER">
+        <Button text="Entrar" onAction="#onLoginClick"/>
+        <Button text="Registrarse" onAction="#onRegistroClick"/>
+        <Button text="Salir" onAction="#onExitClick"/>
+    </HBox>
 
     <Label fx:id="mensajeLabel"/>
 

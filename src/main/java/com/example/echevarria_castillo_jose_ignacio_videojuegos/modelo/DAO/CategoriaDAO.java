@@ -27,9 +27,9 @@ public class CategoriaDAO implements IntCategoriaDAO{
     @Override
     public void guardarcategoria(Categoria categoria) {
 
-        Transaction tx = session.beginTransaction();
+
         session.persist(categoria);
-        tx.commit();
+        //tx.commit();
     }
 
     @Override
@@ -38,5 +38,10 @@ public class CategoriaDAO implements IntCategoriaDAO{
         Transaction tx = session.beginTransaction();
         session.remove(categoria);
         tx.commit();
+    }
+
+    @Override
+    public List<Categoria> obtenerTodas() {
+        return session.createQuery("FROM Categoria", Categoria.class).list();
     }
 }

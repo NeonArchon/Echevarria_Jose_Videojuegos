@@ -12,7 +12,6 @@
         <!-- Entitites -->
         <mapping class="com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.entities.Cliente"/>
         <mapping class="com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.entities.Administrador"/>
-        <mapping class="com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.entities.Categoria"/>
         <mapping class="com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.entities.Juego"/>
         <mapping class="com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.entities.Compra"/>
     </session-factory>

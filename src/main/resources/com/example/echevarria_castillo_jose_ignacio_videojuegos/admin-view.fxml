@@ -1,18 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.echevarria_castillo_jose_ignacio_videojuegos.controller.AdminController"
-      spacing="20" alignment="CENTER" padding="30">
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.echevarria_castillo_jose_ignacio_videojuegos.controller.AdminController"
+      spacing="20" alignment="TOP_CENTER" style="-fx-background-color: #f4f4f4;"
+      prefWidth="800" prefHeight="600">
 
-    <Label text="Modo Administrador" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
 
-    <Button text="Crear Videojuego" onAction="#onCrearVideojuego"/>
-    <Button text="Borrar Videojuego" onAction="#onBorrarVideojuego"/>
+    <!-- Encabezado -->
+    <Label text="Panel de Administración" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333;"/>
 
+    <!-- Barra de búsqueda -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="busquedaField" promptText="Buscar juegos..." style="-fx-pref-width: 300px;"/>
+        <Button text="Buscar" onAction="#onBuscarJuegos" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+    </HBox>
+
+    <!-- Tabla de juegos -->
+    <TableView fx:id="juegosTable" style="-fx-pref-height: 400px;">
+        <columns>
+            <TableColumn text="ID" prefWidth="50">
+                <cellValueFactory><PropertyValueFactory property="id"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Título" prefWidth="150">
+                <cellValueFactory><PropertyValueFactory property="titulo"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Precio" prefWidth="80">
+                <cellValueFactory><PropertyValueFactory property="precio"/></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
+    <!-- Controles de administración -->
+    <HBox spacing="20" alignment="CENTER">
+        <Button text="Añadir Juego" onAction="#onCrearVideojuego" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-min-width: 150px;"/>
+        <Button text="Editar Juego" onAction="#onEditarVideojuego" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-min-width: 150px;"/>
+        <Button text="Eliminar Juego" onAction="#onBorrarVideojuego" style="-fx-background-color: #F44336; -fx-text-fill: white; -fx-min-width: 150px;"/>
+        <Button text="Cerrar Sesión" onAction="#onCerrarSesion" style="-fx-min-width: 150px;"/>
+    </HBox>
+
+    <!-- Mensajes de estado -->
+    <Label fx:id="mensajeLabel" style="-fx-text-fill: #e53935; -fx-font-weight: bold;"/>
 </VBox>

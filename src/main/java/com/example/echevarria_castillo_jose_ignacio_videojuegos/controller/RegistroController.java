@@ -63,5 +63,22 @@ public class RegistroController {
 
     }
 
+    @FXML
+    private void onBorrarClick() {
+        // Limpia todos los campos del formulario
+        nombreField.clear();
+        contrasenaField.clear();
+        emailField.clear();
+        tipoUsuarioCombo.getSelectionModel().clearSelection();
+        mensajeLabel.setText("");
+    }
+
+    @FXML
+    private void onSalirClick() {
+        // Cierra la ventana actual
+        Stage stage = (Stage) nombreField.getScene().getWindow();
+        stage.close();
+    }
+
 
 }

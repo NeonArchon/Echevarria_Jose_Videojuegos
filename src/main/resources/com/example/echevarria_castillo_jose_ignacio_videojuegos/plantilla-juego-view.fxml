@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.image.ImageView?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.echevarria_castillo_jose_ignacio_videojuegos.controller.PlantillaJuegoController"
+      spacing="10" alignment="CENTER" prefWidth="400">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Gestor de de Datos de Videojuego" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints prefWidth="100" halignment="RIGHT"/>
+            <ColumnConstraints prefWidth="300"/>
+        </columnConstraints>
+
+        <!-- Título -->
+        <Label text="Título:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="tituloField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <!-- Descripción -->
+        <Label text="Descripción:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextArea fx:id="descripcionField" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                  style="-fx-pref-height: 100px;"/>
+
+        <!-- Precio -->
+        <Label text="Precio:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="precioField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <!-- Ruta Imagen -->
+        <Label text="Ruta Imagen:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="rutaImagenField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Guardar" onAction="#onGuardarClick" style="-fx-pref-width: 100px;"/>
+        <Button text="Cancelar" onAction="#onCancelarClick" style="-fx-pref-width: 100px;"/>
+    </HBox>
+
+    <Label fx:id="mensajeLabel" style="-fx-text-fill: red;"/>
+
+</VBox>

@@ -16,6 +16,16 @@ public class Categoria {
     @Column(nullable = false, unique = true)
     private String nombre;
 
+    //contructores
+
+
+
+
+    public Categoria(String nombre) {
+        this.nombre = nombre;
+    }
+
+
 
     public Long getId() {
         return id;

@@ -9,7 +9,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="567.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.echevarria_castillo_jose_ignacio_videojuegos.controller.JuegoController">
+<AnchorPane prefHeight="567.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.echevarria_castillo_jose_ignacio_videojuegos.controller.JuegoController">
    <children>
       <ScrollPane hbarPolicy="NEVER" prefHeight="567.0" prefWidth="600.0" vbarPolicy="ALWAYS">
          <content>

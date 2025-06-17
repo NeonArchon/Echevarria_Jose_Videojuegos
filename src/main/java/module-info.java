@@ -15,6 +15,7 @@ module com.example.echevarria_castillo_jose_ignacio_videojuegos {
     opens com.example.echevarria_castillo_jose_ignacio_videojuegos.app to javafx.fxml;
     exports com.example.echevarria_castillo_jose_ignacio_videojuegos.controller;
     opens com.example.echevarria_castillo_jose_ignacio_videojuegos.controller to javafx.fxml;
-    opens com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.entities to org.hibernate.orm.core;
+
+    opens com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.entities to org.hibernate.orm.core, javafx.base;
 
 }

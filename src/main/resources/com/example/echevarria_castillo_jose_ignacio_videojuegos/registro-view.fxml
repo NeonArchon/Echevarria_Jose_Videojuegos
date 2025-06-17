@@ -5,27 +5,42 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.collections.FXCollections?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.echevarria_castillo_jose_ignacio_videojuegos.controller.RegistroController"
-            prefHeight="400.0" prefWidth="600.0">
 
-    <children>
-        <TextField fx:id="nombreField" promptText="Nombre de usuario" layoutY="20"/>
-        <PasswordField fx:id="contrasenaField" promptText="Contraseña" layoutY="60"/>
-        <TextField fx:id="emailField" promptText="Email" layoutY="100"/>
-        <ComboBox fx:id="tipoUsuarioCombo" layoutY="140" promptText="Tipo de usuario">
-            <items>
-                <FXCollections fx:factory="observableArrayList">
-                    <String fx:value="Cliente"/>
-                    <String fx:value="Administrador"/>
-                </FXCollections>
-            </items>
-        </ComboBox>
-        <Button text="Guardar" onAction="#onGuardarClick" layoutY="180"/>
-        <Label fx:id="mensajeLabel" layoutY="220"/>
-    </children>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.echevarria_castillo_jose_ignacio_videojuegos.controller.RegistroController"
+      alignment="CENTER" spacing="15.0" prefHeight="450.0" prefWidth="400.0">
 
-</AnchorPane>
+    <padding>
+        <Insets bottom="20.0" left="30.0" right="30.0" top="30.0"/>
+    </padding>
+
+    <!-- Título del formulario -->
+    <Label text="Registro de Usuario" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <!-- Campos del formulario -->
+    <TextField fx:id="nombreField" promptText="Nombre de usuario" style="-fx-pref-width: 300px;"/>
+    <PasswordField fx:id="contrasenaField" promptText="Contraseña" style="-fx-pref-width: 300px;"/>
+    <TextField fx:id="emailField" promptText="Email" style="-fx-pref-width: 300px;"/>
+
+    <ComboBox fx:id="tipoUsuarioCombo" promptText="Seleccione tipo de usuario" style="-fx-pref-width: 300px;">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Cliente"/>
+                <String fx:value="Administrador"/>
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <!-- Botones alineados horizontalmente -->
+    <HBox spacing="15.0" alignment="CENTER">
+        <Button text="Guardar" onAction="#onGuardarClick" style="-fx-min-width: 100px;"/>
+        <Button text="Borrar" onAction="#onBorrarClick" style="-fx-min-width: 100px;"/>
+        <Button text="Salir" onAction="#onSalirClick" style="-fx-min-width: 100px;"/>
+    </HBox>
+
+    <!-- Mensajes para el usuario -->
+    <Label fx:id="mensajeLabel" style="-fx-text-fill: red;"/>
+</VBox>

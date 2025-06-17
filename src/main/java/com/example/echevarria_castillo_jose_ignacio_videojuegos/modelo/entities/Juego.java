@@ -7,7 +7,6 @@ import jakarta.persistence.*;
 public class Juego {
 
     //atributos
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,25 +19,20 @@ public class Juego {
 
     private double precio;
 
-    @ManyToOne
-    @JoinColumn(name = "categoria_id")
-    private Categoria categoria;
 
 
-        @Column(name = "ruta_imagen")
-        private String rutaImagen;
-
+    @Column(name = "ruta_imagen")
+    private String rutaImagen;
 
     //constructores
     public Juego() {
     }
 
-    public Juego(Long id, String titulo, String descripcion, double precio, Categoria categoria, String rutaImagen) {
+    public Juego(Long id, String titulo, String descripcion, double precio, String rutaImagen) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.precio = precio;
-        this.categoria = categoria;
         this.rutaImagen = rutaImagen;
     }
 
@@ -73,14 +67,6 @@ public class Juego {
 
     public void setPrecio(double precio) {
         this.precio = precio;
-    }
-
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
     }
 
     public String getRutaImagen() {

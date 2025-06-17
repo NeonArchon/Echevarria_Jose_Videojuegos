@@ -1,20 +1,28 @@
 package com.example.echevarria_castillo_jose_ignacio_videojuegos.controller;
 
 import com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.DAO.AdministradorDAO;
+import com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.DAO.CategoriaDAO;
 import com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.DAO.ClienteDAO;
 import com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.entities.Administrador;
+import com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.entities.Categoria;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import org.hibernate.Transaction;
 
 import com.example.echevarria_castillo_jose_ignacio_videojuegos.modelo.entities.Cliente;
 import com.example.echevarria_castillo_jose_ignacio_videojuegos.Util.HibernateUtil;
+import org.hibernate.Session;
+import org.hibernate.query.Query;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
+import java.util.List;
 
 public class HelloController {
 
@@ -25,8 +33,12 @@ public class HelloController {
     @FXML
     private Label mensajeLabel;
 
+    private Session session;
     private ClienteDAO clienteDAO = new ClienteDAO();
     private AdministradorDAO adminDAO = new AdministradorDAO();
+
+
+
 
     @FXML
     protected void onLoginClick() {
@@ -81,6 +93,11 @@ public class HelloController {
         stage.setTitle("Registro de Usuario");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    private void onExitClick() {
+        Platform.exit();
     }
 
 }

@@ -9,5 +9,6 @@ public interface IntCategoriaDAO {
     List<Categoria> buscarCategorias();
     void guardarcategoria(Categoria categoria);
     void borrarcategoria(Categoria categoria);
+    List<Categoria> obtenerTodas();
 
 }
